@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SVU AI University Assistant</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+{% include "header.html" %}
+
+<nav class="accessibility">
+
+    <button id="lightMode">
+        <i class="fa-solid fa-sun"></i>
+    </button>
+
+    <button id="darkMode">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <button id="contrast">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+    </button>
+
+</nav>
+
+<!-- ================= WELCOME ================= -->
+
+<section class="welcome">
+
+    <h2>مرحبًا بك 👋</h2>
+
+    <p>
+
+        يمكنك الاستفسار عن التخصصات، الرسوم الدراسية، شروط القبول، وآلية التسجيل
+        من خلال المساعد الذكي للجامعة الافتراضية السورية.
+
+    </p>
+
+</section>
+
+<!-- ================= CARDS ================= -->
+
+<section class="cards">
+
+    <div class="card">
+
+        <i class="fa-solid fa-comments"></i>
+
+        <h3>ابدأ المحادثة</h3>
+
+        <p>تحدث مباشرة مع المساعد الذكي.</p>
+
+       <a href="chat" class="btn">ابدأ</a>
+
+
+    </div>
+
+    <div class="card">
+
+        <i class="fa-solid fa-book-open"></i>
+
+        <h3>التخصصات</h3>
+
+        <p>استعرض جميع التخصصات المتوفرة.</p>
+
+        <a href="majors" class="btn">عرض</a>
+
+
+    </div>
+
+    <div class="card">
+
+        <i class="fa-solid fa-money-bill-wave"></i>
+
+        <h3>الرسوم الدراسية</h3>
+
+        <p>تعرف على رسوم كل تخصص.</p>
+
+        <a href="fees" class="btn">عرض</a>
+
+
+    </div>
+
+    <div class="card">
+
+        <i class="fa-solid fa-file-lines"></i>
+
+        <h3>شروط القبول</h3>
+
+        <p>اطلع على متطلبات وشروط القبول.</p>
+
+        <a href="admissions" class="btn">عرض</a>
+
+
+    </div>
+
+    <div class="card">
+
+        <i class="fa-solid fa-user-plus"></i>
+
+        <h3>التسجيل</h3>
+
+        <p>تعرف على آلية التسجيل في الجامعة.</p>
+
+        <a href="registration" class="btn">عرض</a>
+
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>© 2026 Syrian Virtual University</p>
+
+    <p>Graduation Project</p>
+
+    <p>AI University Chatbot</p>
+
+</footer>
+
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>المساعد الذكي</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+<header class="header">
+
+    <img src="{{ url_for('static', filename='images/svu_logo.png') }}">
+
+    <h1>الجامعة الافتراضية السورية</h1>
+
+    <h2>Syrian Virtual University</h2>
+
+    <div class="assistant">
+
+        <i class="fa-solid fa-robot"></i>
+
+        <span>AI University Assistant</span>
+
+    </div>
+
+</header>
+
+<nav class="accessibility">
+
+    <button id="lightMode">
+        <i class="fa-solid fa-sun"></i>
+    </button>
+
+    <button id="darkMode">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <button id="contrast">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+    </button>
+
+</nav>
+
+<div class="chat-title">
+
+    <div class="chat-icon">
+        🤖
+    </div>
+
+    <h2>المساعد الذكي</h2>
+
+    <p>
+        جاهز للإجابة عن استفساراتك الجامعية.
+    </p>
+
+</div>
+
+<div class="chat-box">
+
+    <h2>💬 ابدأ المحادثة</h2>
+
+    <div id="messages">
+
+        {% if answer %}
+
+        <div class="user-message">
+
+            👤 {{ request.form.question }}
+
+        </div>
+
+        <div class="bot-message">
+
+            🤖 {{ answer|safe }}
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+    <form id="chatForm" method="POST">
+
+        <input
+            type="text"
+            id="question"
+            name="question"
+            placeholder="اكتب سؤالك هنا..."
+            required>
+
+        <button type="submit">
+
+            إرسال
+
+        </button>
+
+    </form>
+
+</div>
+
+
+<div style="text-align:center;margin-top:30px;">
+
+<a href="/" class="btn">
+
+⬅️ العودة إلى الصفحة الرئيسية
+
+</a>
+
+</div>
+
+
+<footer>
+
+<p>© 2026 Syrian Virtual University</p>
+
+<p>Graduation Project</p>
+
+<p>AI University Chatbot</p>
+
+</footer>
+
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
+
+
