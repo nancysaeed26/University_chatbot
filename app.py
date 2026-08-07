@@ -13,12 +13,14 @@ print("Template folder:", app.template_folder)
 
 
 db = pymysql.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="university_chatbot",
+    host=os.getenv("MYSQLHOST"),
+    user=os.getenv("MYSQLUSER"),
+    password=os.getenv("MYSQLPASSWORD"),
+    database=os.getenv("MYSQLDATABASE"),
+    port=int(os.getenv("MYSQLPORT")),
     charset="utf8mb4"
 )
+
 
 cursor = db.cursor()
 
